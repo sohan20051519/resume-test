@@ -96,7 +96,7 @@ const EditorPage: React.FC = () => {
         document.body.appendChild(iframe);
 
         const iframeDoc = iframe.contentWindow!.document;
-        const resumeHTML = source.outerHTML;
+        const resumeHTML = source.innerHTML;
 
         // Hardcode the Tailwind script and config to ensure styles are applied reliably in the iframe.
         // This is the most robust way to handle printing across all browsers, especially mobile.
@@ -155,7 +155,7 @@ const EditorPage: React.FC = () => {
         iframeDoc.open();
         iframeDoc.write(printContent);
         iframeDoc.close();
-        
+
         const printAndCleanup = () => {
             try {
                 iframe.contentWindow!.focus(); // focus is important for some browsers
@@ -172,7 +172,7 @@ const EditorPage: React.FC = () => {
                 }, 1000);
             }
         };
-        
+
         // Use a longer timeout to ensure Tailwind's CDN script has time to fetch, run, and apply styles.
         setTimeout(printAndCleanup, 1000);
     };

@@ -12,7 +12,7 @@ const ProfessionalTemplate: React.FC<{ data: ResumeData }> = ({ data }) => {
     );
 
     return (
-        <div className="h-full bg-white font-sans text-gray-800 text-sm p-10">
+        <div className="bg-white font-sans text-gray-800 text-sm p-10">
             <header className="text-center mb-8">
                 <h1 className="text-4xl font-bold tracking-tight">{personalInfo.fullName}</h1>
                 <p className="text-xl font-medium text-gray-600 mt-1">{personalInfo.jobTitle}</p>

@@ -19,7 +19,7 @@ const MonacoTemplate: React.FC<{ data: ResumeData }> = ({ data }) => {
     );
 
     return (
-        <div className="h-full flex font-sans bg-white text-gray-800 text-sm">
+        <div className="flex font-sans bg-white text-gray-800 text-sm">
             {/* Sidebar */}
             <aside className="w-1/3 bg-gray-50 p-6 flex flex-col">
                 <header className="text-left mb-10">
