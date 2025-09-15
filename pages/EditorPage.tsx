@@ -89,6 +89,10 @@ const EditorPage: React.FC = () => {
 
         setIsGenerating(true);
 
+        const contentHeight = source.scrollHeight;
+        const pageHeight = 1100; // 11 inches at 100dpi
+        const scale = contentHeight > pageHeight ? pageHeight / contentHeight : 1;
+
         const iframe = document.createElement('iframe');
         iframe.style.position = 'absolute';
         iframe.style.top = '-9999px';
@@ -147,7 +151,9 @@ const EditorPage: React.FC = () => {
                 </style>
               </head>
               <body>
-                ${resumeHTML}
+                 <div style="width: 850px; transform: scale(${scale}); transform-origin: top left;">
+                    ${resumeHTML}
+                </div>
               </body>
             </html>
         `;
